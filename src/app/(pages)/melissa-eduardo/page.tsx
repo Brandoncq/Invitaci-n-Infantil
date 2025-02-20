@@ -1,26 +1,33 @@
-import { StartPresentation } from "../../../../core/components/StartPresentation";
-import "../../../../core/constants/fonts.css";
-import { MEIcon } from "../icon/ME";
-import { Gallery } from "../../../../core/components/Gallery";
-import { Images } from "../../../../core/interfaces/Image";
-import { Privilege } from "../../../../core/components/Privilege";
-import { Celebration } from "../../../../core/components/EventLocation";
-import { Passes } from "../../../../core/components/Passes";
-import { Schedule } from "../../../../core/components/Schedule";
-import { ChurchIcon } from "../../../../core/icons/Church";
-import { GiftCollection } from "../../../../core/components/GiftCollection";
-import { YapeIcon } from "../../../../core/icons/Yape";
-import { PlinIcon } from "../../../../core/icons/Plin";
-import { DressCode } from "../../../../core/components/DressCode";
-import { FemaleIcon } from "../../../../core/icons/FemaleIcon";
-import { MaleIcon } from "../../../../core/icons/Male";
-import { Restriction } from "../../../../core/components/Restriction";
-import { RecomendationMusic } from "../../../../core/components/RecomendationMusic";
-import { RSVPConfirmation } from "../../../../core/components/RSVPConfirmation";
-import { Note } from "../../../../core/components/Note";
-import { WaterMark } from "../../../../core/components/WaterMark";
+"use client";
+import { useState, useEffect } from "react";
+import { StartPresentation } from "@/core/components/StartPresentation";
+import "@/core/constants/fonts.css";
+import { MEIcon } from "./presentation/icon/ME";
+import { Gallery } from "@/core/components/Gallery";
+import { Images } from "@/core/interfaces/Image";
+import { Privilege } from "@/core/components/Privilege";
+import { Celebration } from "@/core/components/EventLocation";
+import { Passes } from "@/core/components/Passes";
+import { Schedule } from "@/core/components/Schedule";
+import { ChurchIcon } from "@/core/icons/Church";
+import { GiftCollection } from "@/core/components/GiftCollection";
+import { YapeIcon } from "@/core/icons/Yape";
+import { PlinIcon } from "@/core/icons/Plin";
+import { DressCode } from "@/core/components/DressCode";
+import { FemaleIcon } from "@/core/icons/FemaleIcon";
+import { MaleIcon } from "@/core/icons/Male";
+import { Restriction } from "@/core/components/Restriction";
+import { RecomendationMusic } from "@/core/components/RecomendationMusic";
+import { RSVPConfirmation } from "@/core/components/RSVPConfirmation";
+import { Note } from "@/core/components/Note";
+import { WaterMark } from "@/core/components/WaterMark";
 
 export const MelissaEduardo: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024);
+  }, []);
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
   const FONT_SECONDARY = "font-river-flows-custom";
@@ -253,6 +260,7 @@ export const MelissaEduardo: React.FC = () => {
         receptionLocation={RECEPTION_DETAILS.location}
         receptionAddress={RECEPTION_DETAILS.address}
         receptionMapLink={RECEPTION_DETAILS.mapLink}
+        isMobile={isMobile}
       />
       <Passes
         id={NUM_PASSES}
@@ -285,21 +293,25 @@ export const MelissaEduardo: React.FC = () => {
         femaleDressType={DRESS_CODE_CONFIG.femaleDressType}
         maleDressType={DRESS_CODE_CONFIG.maleDressType}
         colorGuide={DRESS_CODE_CONFIG.colorGuide}
+        isMobile={isMobile}
       />
       <Restriction
         fontTitle={FONT_TITLE}
         fontDescription={FONT_DESCRIPTION}
         restrictionConfig={RESTRICTION_CONFIG}
+        isMobile={isMobile}
       />
       <RecomendationMusic
         fontTitle={FONT_TITLE}
         fontDescription={FONT_DESCRIPTION}
         config={RECOMENDATION_MUSIC_CONFIG}
+        isMobile={isMobile}
       />
       <RSVPConfirmation
         fontTitle={FONT_TITLE}
         fontDescription={FONT_DESCRIPTION}
         config={RSVP_CONFIRMATION_CONFIG}
+        isMobile={isMobile}
       />
       <Note
         fontTitle={FONT_TITLE}
@@ -310,3 +322,4 @@ export const MelissaEduardo: React.FC = () => {
     </>
   );
 };
+export default MelissaEduardo;
