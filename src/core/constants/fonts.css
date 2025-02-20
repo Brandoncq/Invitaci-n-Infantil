@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: "Cinzel";
+    src: url('../assets/fonts/CinzelDecorative-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "River Flows";
+    src: url('../assets/fonts/RIVERFLOWS.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "TT Drugs Trial";
+    src: url('../assets/fonts/drugs.otf') format('opentype');
+}
+
+.font-popins-custom {
+    font-family: "Poppins";
+}
+
+.font-cinzel-custom {
+    font-family: 'Cinzel', serif;
+}
+
+.font-river-flows-custom {
+    font-family: "River Flows", serif;
+}
+
+.font-drugs-trial-custom {
+    font-family: 'TT Drugs Trial';
+}
