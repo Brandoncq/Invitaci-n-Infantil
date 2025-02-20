@@ -112,7 +112,7 @@ export const RSVPConfirmation = ({ fontTitle, fontDescription, config }: RSVPCon
 							id="name"
 							name="name"
 							type="text"
-							placeholder="Nombre del asistente:"
+							placeholder="Nombre del asistente"
 							className={`w-full border py-1.5 px-4 hover:bg-[#ceefd5a6] hover:border-[#5a8766a6] text-sm rounded-md focus:outline-none focus:bg-[#ceefd548] placeholder-[#212121] focus:border-[#5a8766a6] ${
 								!formData.isNameValid ? "bg-[#FF8A85a6] border-[#ff4040]" : "bg-[#ceefd548] border-transparent"
 							}`}
@@ -124,7 +124,7 @@ export const RSVPConfirmation = ({ fontTitle, fontDescription, config }: RSVPCon
 							id="phone"
 							name="phone"
 							type="number"
-							placeholder="Celular:"
+							placeholder="Celular"
 							className="w-full border-transparent border py-1.5 px-4 bg-[#ceefd548] hover:bg-[#ceefd5a6] hover:border-[#5a8766a6] text-sm rounded-md focus:outline-none focus:bg-[#ceefd548] placeholder-[#212121] focus:border-[#5a8766a6]"
 							value={formData.phone}
 							onChange={handleChange}
@@ -145,7 +145,7 @@ export const RSVPConfirmation = ({ fontTitle, fontDescription, config }: RSVPCon
 							disabled
 							hidden
 						>
-							Confirmación:
+							Confirmación
 						</option>
 						<option value="Sí, asistiremos">Sí, asistiremos</option>
 						<option value="Lo siento, no podremos asistir">Lo siento, no podremos asistir</option>

@@ -1,8 +1,12 @@
 import { businessName, urlBusinessName } from "../constants/utils";
+import { Row } from "./Row";
 
 export const WaterMark = () => {
 	return (
-		<footer className="flex w-full text-black opacity-70 justify-center mt-auto px-4 py-5 text-sm lg:text-base bg-transparent">
+		<Row
+			mainAxisAlignment="center"
+			className="w-full text-black opacity-70 mt-auto px-4 py-5 text-sm lg:text-base bg-transparent"
+		>
 			<a
 				href={urlBusinessName}
 				target="_blank"
@@ -10,6 +14,6 @@ export const WaterMark = () => {
 			>
 				Creado con ♥️ por <span className="underline">{businessName}</span>
 			</a>
-		</footer>
+		</Row>
 	);
 };
