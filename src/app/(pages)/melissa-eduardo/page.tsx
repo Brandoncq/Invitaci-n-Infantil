@@ -24,15 +24,16 @@ import { WaterMark } from "@/core/components/WaterMark";
 import ModalPresentation from "@/core/components/ModalPresentation";
 import LoadingPresentation from "@/core/components/LoadingPresentation";
 import ViewPresentation from "@/core/components/ViewPresentation";
+import MusicButton from "@/core/components/MusicButton";
 export const MelissaEduardo: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024);
   }, []);
-
   const [isVisible, setVisible] = useState(true);
   const [openModal, setModal] = useState(true);
+  const [isPlaying, setPlaying] = useState(false);
+
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
   const FONT_SECONDARY = "font-river-flows-custom";
@@ -224,9 +225,10 @@ export const MelissaEduardo: React.FC = () => {
             onClose={() => {
               setModal(false);
               setVisible(false);
+              setPlaying(true);
             }}
-            husbandName="Gabriel"
-            wifeName="Valentina"
+            husbandName="eduardo"
+            wifeName="Melissa"
             fontSize="text-5xl lg:text-6xl"
             fontTitle="fancy-font-class"
             fontHusbands={FONT_TITLE}
@@ -238,7 +240,15 @@ export const MelissaEduardo: React.FC = () => {
             buttonTextColor="hover:text-white text-black"
           />
         </ModalPresentation>
-
+        <MusicButton
+          isVisible={openModal}
+          isPlaying={isPlaying}
+          togglePlay={() => {
+            setPlaying((prev) => !prev);
+          }}
+          volume={0.1}
+          musicUrl="https://res.cloudinary.com/dmo6ofy2z/video/upload/v1740252349/Feliz_Me_Siento_nmosap.mp3"
+        />
         <StartPresentation
           fontTitle={FONT_TITLE}
           fontDescription={FONT_DESCRIPTION}
