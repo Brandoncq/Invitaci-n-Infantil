@@ -16,7 +16,6 @@ export const Celebration = ({
   receptionLocation,
   receptionAddress,
   receptionMapLink,
-  isMobile,
 }: CelebrationProps) => {
   const renderPart = (
     title: string,
@@ -86,9 +85,7 @@ export const Celebration = ({
       <article className="max-lg:flex-col max-lg:items-center flex justify-center text-center lg:py-16 w-full lg:w-[50rem] gap-0 lg:gap-16">
         <Column
           crossAxisAlignment="center"
-          className={`${
-            isMobile && "celebration-ceremony "
-          } max-lg:pt-0 max-lg:pb-4 w-full gap-4 lg:gap-8 lg:w-1/2`}
+          className="max-lg:pt-0 max-lg:pb-4 w-full gap-4 lg:gap-8 lg:w-1/2"
         >
           <h2
             className={`lg:hidden max-lg:pb-4 ${fontTitle} text-2xl pt-4 lg:pt-8 text-[#000000] mt-10 font-semibold`}
@@ -109,9 +106,7 @@ export const Celebration = ({
 
         <Column
           crossAxisAlignment="center"
-          className={`${
-            isMobile && "celebration-reception"
-          } max-lg:pt-4 max-lg:pb-8 gap-4 lg:gap-8 w-full lg:w-1/2`}
+          className="max-lg:pt-4 max-lg:pb-8 gap-4 lg:gap-8 w-full lg:w-1/2"
         >
           {renderPart(
             "Recepción",

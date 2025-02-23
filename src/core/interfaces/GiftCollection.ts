@@ -1,6 +1,6 @@
 interface ModalData {
 	name: string;
-	icon: JSX.Element | null;
+	icon: React.ReactNode  | null;
 	accountData?: { type: string; number: string }[];
 	locationData?: { url: string };
 }

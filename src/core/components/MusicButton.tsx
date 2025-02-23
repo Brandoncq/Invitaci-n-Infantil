@@ -11,7 +11,6 @@ const MusicButton: React.FC<MusicButtonProps> = ({
   togglePlay,
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  console.log(!isVisible);
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;

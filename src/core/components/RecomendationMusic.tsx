@@ -9,7 +9,6 @@ export const RecomendationMusic = ({
   fontTitle,
   fontDescription,
   config,
-  isMobile,
 }: RecomendationMusicProps) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -152,7 +151,7 @@ export const RecomendationMusic = ({
       <Column
         mainAxisAlignment="center"
         crossAxisAlignment="center"
-        className={`${isMobile && "recomendationmusic-bg"} gap-5 w-full py-7`}
+        className="gap-5 w-full py-7"
         data-aos="fade-up"
         data-aos-duration="1500"
       >

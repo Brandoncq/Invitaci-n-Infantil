@@ -25,14 +25,12 @@ import ModalPresentation from "@/core/components/ModalPresentation";
 import LoadingPresentation from "@/core/components/LoadingPresentation";
 import ViewPresentation from "@/core/components/ViewPresentation";
 import MusicButton from "@/core/components/MusicButton";
+import ContentPresentation from "@/core/components/ContentPresentation";
+
 export const MelissaEduardo: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 1024);
-  }, []);
-  const [isVisible, setVisible] = useState(true);
-  const [openModal, setModal] = useState(true);
-  const [isPlaying, setPlaying] = useState(false);
+  const [isVisiblePresentation, setVisiblePresentation] = useState(true);
+  const [openModalPresentation, setModalPresentation] = useState(true);
+  const [isPlayingMusic, setPlayingMusic] = useState(false);
 
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
@@ -219,13 +217,13 @@ export const MelissaEduardo: React.FC = () => {
 
   return (
     <>
-      <LoadingPresentation duration={1.5} isVisible={isVisible}>
-        <ModalPresentation isOpen={openModal} duration={1}>
+      <LoadingPresentation duration={1.5} isVisible={isVisiblePresentation}>
+        <ModalPresentation isOpen={openModalPresentation} duration={1}>
           <ViewPresentation
             onClose={() => {
-              setModal(false);
-              setVisible(false);
-              setPlaying(true);
+              setModalPresentation(false);
+              setVisiblePresentation(false);
+              setPlayingMusic(true);
             }}
             husbandName="eduardo"
             wifeName="Melissa"
@@ -240,121 +238,118 @@ export const MelissaEduardo: React.FC = () => {
             buttonTextColor="hover:text-white text-black"
           />
         </ModalPresentation>
-        <MusicButton
-          isVisible={openModal}
-          isPlaying={isPlaying}
-          togglePlay={() => {
-            setPlaying((prev) => !prev);
-          }}
-          volume={0.1}
-          musicUrl="https://res.cloudinary.com/dmo6ofy2z/video/upload/v1740252349/Feliz_Me_Siento_nmosap.mp3"
-        />
-        <StartPresentation
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          fontSecondary={FONT_SECONDARY}
-          name={`${BRIDE_NAME} & ${GROOM_NAME}`}
-          yearFinal={YEAR_FINAL}
-          monthFinal={MONTH_FINAL}
-          dayFinal={DAY_FINAL}
-          hourFinal={HOUR_FINAL}
-          minuteFinal={MINUTE_FINAL}
-          secondFinal={SECOND_FINAL}
-          icon={<MEIcon className="w-16 lg:w-24" />}
-        />
-        <Gallery
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          images={IMAGES}
-        />
-        <Privilege
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          brideParents={[
-            { name: "Ronald Málaga Vásquez" },
-            { name: "Rosalvina Zúñiga Olano" },
-          ]}
-          groomParents={[
-            { name: "Eduardo Castro Román ✝" },
-            { name: "Adalguisa Cúneo Toso" },
-          ]}
-          godparents={[
-            { name: "Edward Vargas Valderrama" },
-            { name: "Maritza Dávila Olano" },
-          ]}
-        />
-        <Celebration
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          ceremonyImages={CEREMONY_IMAGES}
-          receptionImages={RECEPTION_IMAGES}
-          ceremonyTime={CEREMONY_DETAILS.time}
-          ceremonyLocation={CEREMONY_DETAILS.location}
-          ceremonyAddress={CEREMONY_DETAILS.address}
-          ceremonyMapLink={CEREMONY_DETAILS.mapLink}
-          receptionTime={RECEPTION_DETAILS.time}
-          receptionLocation={RECEPTION_DETAILS.location}
-          receptionAddress={RECEPTION_DETAILS.address}
-          receptionMapLink={RECEPTION_DETAILS.mapLink}
-          isMobile={isMobile}
-        />
-        <Passes
-          id={NUM_PASSES}
-          fontDescription={FONT_DESCRIPTION}
-          colorBg={COLOR_BG}
-          colorPasses={COLOR_PASSES}
-        />
-        <Schedule
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          scheduleItems={SCHEDULE_ITEMS}
-        />
-        <GiftCollection
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          modalsData={MODALS_DATA}
-          accountData={ACCOUNT_DATA}
-          locationData={LOCATION_DATA}
-        />
-        <DressCode
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          dressLabel={DRESS_CODE_CONFIG.dressLabel}
-          maleLabel={DRESS_CODE_CONFIG.maleLabel}
-          femaleLabel={DRESS_CODE_CONFIG.femaleLabel}
-          femaleIcon={DRESS_CODE_CONFIG.femaleIcon}
-          maleIcon={DRESS_CODE_CONFIG.maleIcon}
-          femaleDescription={DRESS_CODE_CONFIG.femaleDescription}
-          maleDescription={DRESS_CODE_CONFIG.maleDescription}
-          femaleDressType={DRESS_CODE_CONFIG.femaleDressType}
-          maleDressType={DRESS_CODE_CONFIG.maleDressType}
-          colorGuide={DRESS_CODE_CONFIG.colorGuide}
-          isMobile={isMobile}
-        />
-        <Restriction
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          restrictionConfig={RESTRICTION_CONFIG}
-          isMobile={isMobile}
-        />
-        <RecomendationMusic
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          config={RECOMENDATION_MUSIC_CONFIG}
-          isMobile={isMobile}
-        />
-        <RSVPConfirmation
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          config={RSVP_CONFIRMATION_CONFIG}
-          isMobile={isMobile}
-        />
-        <Note
-          fontTitle={FONT_TITLE}
-          fontDescription={FONT_DESCRIPTION}
-          text={TEXT_NOTE}
-        />
-        <WaterMark />
+        <ContentPresentation isVisiblePresentation={isVisiblePresentation}>
+          <MusicButton
+            isVisible={openModalPresentation}
+            isPlaying={isPlayingMusic}
+            togglePlay={() => {
+              setPlayingMusic((prev) => !prev);
+            }}
+            volume={0.1}
+            musicUrl="https://res.cloudinary.com/dmo6ofy2z/video/upload/v1740252349/Feliz_Me_Siento_nmosap.mp3"
+          />
+          <StartPresentation
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            fontSecondary={FONT_SECONDARY}
+            name={`${BRIDE_NAME} & ${GROOM_NAME}`}
+            yearFinal={YEAR_FINAL}
+            monthFinal={MONTH_FINAL}
+            dayFinal={DAY_FINAL}
+            hourFinal={HOUR_FINAL}
+            minuteFinal={MINUTE_FINAL}
+            secondFinal={SECOND_FINAL}
+            icon={<MEIcon className="w-16 lg:w-24" />}
+          />
+          <Gallery
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            images={IMAGES}
+          />
+          <Privilege
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            brideParents={[
+              { name: "Ronald Málaga Vásquez" },
+              { name: "Rosalvina Zúñiga Olano" },
+            ]}
+            groomParents={[
+              { name: "Eduardo Castro Román ✝" },
+              { name: "Adalguisa Cúneo Toso" },
+            ]}
+            godparents={[
+              { name: "Edward Vargas Valderrama" },
+              { name: "Maritza Dávila Olano" },
+            ]}
+          />
+          <Celebration
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            ceremonyImages={CEREMONY_IMAGES}
+            receptionImages={RECEPTION_IMAGES}
+            ceremonyTime={CEREMONY_DETAILS.time}
+            ceremonyLocation={CEREMONY_DETAILS.location}
+            ceremonyAddress={CEREMONY_DETAILS.address}
+            ceremonyMapLink={CEREMONY_DETAILS.mapLink}
+            receptionTime={RECEPTION_DETAILS.time}
+            receptionLocation={RECEPTION_DETAILS.location}
+            receptionAddress={RECEPTION_DETAILS.address}
+            receptionMapLink={RECEPTION_DETAILS.mapLink}
+          />
+          <Passes
+            id={NUM_PASSES}
+            fontDescription={FONT_DESCRIPTION}
+            colorBg={COLOR_BG}
+            colorPasses={COLOR_PASSES}
+          />
+          <Schedule
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            scheduleItems={SCHEDULE_ITEMS}
+          />
+          <GiftCollection
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            modalsData={MODALS_DATA}
+            accountData={ACCOUNT_DATA}
+            locationData={LOCATION_DATA}
+          />
+          <DressCode
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            dressLabel={DRESS_CODE_CONFIG.dressLabel}
+            maleLabel={DRESS_CODE_CONFIG.maleLabel}
+            femaleLabel={DRESS_CODE_CONFIG.femaleLabel}
+            femaleIcon={DRESS_CODE_CONFIG.femaleIcon}
+            maleIcon={DRESS_CODE_CONFIG.maleIcon}
+            femaleDescription={DRESS_CODE_CONFIG.femaleDescription}
+            maleDescription={DRESS_CODE_CONFIG.maleDescription}
+            femaleDressType={DRESS_CODE_CONFIG.femaleDressType}
+            maleDressType={DRESS_CODE_CONFIG.maleDressType}
+            colorGuide={DRESS_CODE_CONFIG.colorGuide}
+          />
+          <Restriction
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            restrictionConfig={RESTRICTION_CONFIG}
+          />
+          <RecomendationMusic
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            config={RECOMENDATION_MUSIC_CONFIG}
+          />
+          <RSVPConfirmation
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            config={RSVP_CONFIRMATION_CONFIG}
+          />
+          <Note
+            fontTitle={FONT_TITLE}
+            fontDescription={FONT_DESCRIPTION}
+            text={TEXT_NOTE}
+          />
+          <WaterMark />
+        </ContentPresentation>
       </LoadingPresentation>
     </>
   );
