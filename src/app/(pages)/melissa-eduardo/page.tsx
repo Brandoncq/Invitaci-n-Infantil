@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { StartPresentation } from "@/core/components/StartPresentation";
 import "@/core/constants/fonts.css";
 import { MEIcon } from "./presentation/icon/ME";
@@ -28,16 +28,53 @@ import MusicButton from "@/core/components/MusicButton";
 import ContentPresentation from "@/core/components/ContentPresentation";
 
 export const MelissaEduardo: React.FC = () => {
-  const [isVisiblePresentation, setVisiblePresentation] = useState(true);
-  const [openModalPresentation, setModalPresentation] = useState(true);
-  const [isPlayingMusic, setPlayingMusic] = useState(false);
+  const presentationConfig = {
+    isVisiblePresentation: true,
+    openModalPresentation: true,
+    isPlayingMusic: false,
+  };
+
+  const [presentationState, setPresentationState] =
+    useState(presentationConfig);
+  const toggleMusic = () => {
+    setPresentationState((prev) => ({
+      ...prev,
+      isPlayingMusic: !prev.isPlayingMusic,
+    }));
+  };
+
+  const closePresentation = () => {
+    setPresentationState({
+      isVisiblePresentation: false,
+      openModalPresentation: false,
+      isPlayingMusic: true,
+    });
+  };
 
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
   const FONT_SECONDARY = "font-river-flows-custom";
-
   const BRIDE_NAME = "Melissa";
-  const GROOM_NAME = "eduardo";
+  const GROOM_NAME = "Eduardo";
+
+  const VIEW_PRESENTATION_DATA = {
+    husbandName: BRIDE_NAME,
+    wifeName: GROOM_NAME,
+    fontSize: "text-5xl lg:text-6xl",
+    fontTitle: FONT_DESCRIPTION,
+    fontHusbands: FONT_TITLE,
+    ampersandSize: "text-[8rem] lg:text-[12rem]",
+    imageTopSrc: "https://tema-verdor.vercel.app/presentacion-flores-2.png",
+    imageBottomSrc: "https://tema-verdor.vercel.app/presentacion-flores-1.png",
+    buttonLabel: "Ingresar",
+    buttonBg: "bg-gray-300 hover:bg-black",
+    buttonTextColor: "hover:text-white text-black",
+  };
+
+  const MUSICBUTTON_DATA = {
+    musicUrl:
+      "https://res.cloudinary.com/dmo6ofy2z/video/upload/v1740252349/Feliz_Me_Siento_nmosap.mp3",
+  };
 
   const YEAR_FINAL = 2025;
   const MONTH_FINAL = 2;
@@ -217,36 +254,38 @@ export const MelissaEduardo: React.FC = () => {
 
   return (
     <>
-      <LoadingPresentation duration={1.5} isVisible={isVisiblePresentation}>
-        <ModalPresentation isOpen={openModalPresentation} duration={1}>
+      <LoadingPresentation
+        duration={1.5}
+        isVisible={presentationState.isVisiblePresentation}
+      >
+        <ModalPresentation
+          isOpen={presentationState.openModalPresentation}
+          duration={1}
+        >
           <ViewPresentation
-            onClose={() => {
-              setModalPresentation(false);
-              setVisiblePresentation(false);
-              setPlayingMusic(true);
-            }}
-            husbandName="eduardo"
-            wifeName="Melissa"
-            fontSize="text-5xl lg:text-6xl"
-            fontTitle="fancy-font-class"
-            fontHusbands={FONT_TITLE}
-            ampersandSize="text-[8rem] lg:text-[12rem]"
-            imageTopSrc="https://tema-verdor.vercel.app/presentacion-flores-2.png"
-            imageBottomSrc="https://tema-verdor.vercel.app/presentacion-flores-1.png"
-            buttonLabel="Ingresar"
-            buttonBg="bg-gray-300 hover:bg-black"
-            buttonTextColor="hover:text-white text-black"
+            onClose={closePresentation}
+            husbandName={VIEW_PRESENTATION_DATA.husbandName}
+            wifeName={VIEW_PRESENTATION_DATA.wifeName}
+            fontSize={VIEW_PRESENTATION_DATA.fontSize}
+            fontTitle={VIEW_PRESENTATION_DATA.fontTitle}
+            fontHusbands={VIEW_PRESENTATION_DATA.fontHusbands}
+            ampersandSize={VIEW_PRESENTATION_DATA.ampersandSize}
+            imageTopSrc={VIEW_PRESENTATION_DATA.imageTopSrc}
+            imageBottomSrc={VIEW_PRESENTATION_DATA.imageBottomSrc}
+            buttonLabel={VIEW_PRESENTATION_DATA.buttonLabel}
+            buttonBg={VIEW_PRESENTATION_DATA.buttonBg}
+            buttonTextColor={VIEW_PRESENTATION_DATA.buttonTextColor}
           />
         </ModalPresentation>
-        <ContentPresentation isVisiblePresentation={isVisiblePresentation}>
+        <ContentPresentation
+          isVisiblePresentation={presentationState.isVisiblePresentation}
+        >
           <MusicButton
-            isVisible={openModalPresentation}
-            isPlaying={isPlayingMusic}
-            togglePlay={() => {
-              setPlayingMusic((prev) => !prev);
-            }}
+            isVisible={presentationState.openModalPresentation}
+            isPlaying={presentationState.isPlayingMusic}
+            togglePlay={toggleMusic}
             volume={0.1}
-            musicUrl="https://res.cloudinary.com/dmo6ofy2z/video/upload/v1740252349/Feliz_Me_Siento_nmosap.mp3"
+            musicUrl={MUSICBUTTON_DATA.musicUrl}
           />
           <StartPresentation
             fontTitle={FONT_TITLE}
