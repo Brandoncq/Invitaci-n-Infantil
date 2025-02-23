@@ -1,4 +1,5 @@
 export const metadata = {
+  //metadataBase: new URL("https://suadoly.com"),
   title: "Invitación de Boda",
   description: "Acompáñanos en nuestro día especial",
   openGraph: {

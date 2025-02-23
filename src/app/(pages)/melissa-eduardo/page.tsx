@@ -21,13 +21,18 @@ import { RecomendationMusic } from "@/core/components/RecomendationMusic";
 import { RSVPConfirmation } from "@/core/components/RSVPConfirmation";
 import { Note } from "@/core/components/Note";
 import { WaterMark } from "@/core/components/WaterMark";
-
+import ModalPresentation from "@/core/components/ModalPresentation";
+import LoadingPresentation from "@/core/components/LoadingPresentation";
+import ViewPresentation from "@/core/components/ViewPresentation";
 export const MelissaEduardo: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024);
   }, []);
+
+  const [isVisible, setVisible] = useState(true);
+  const [openModal, setModal] = useState(true);
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
   const FONT_SECONDARY = "font-river-flows-custom";
@@ -213,112 +218,134 @@ export const MelissaEduardo: React.FC = () => {
 
   return (
     <>
-      <StartPresentation
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        fontSecondary={FONT_SECONDARY}
-        name={`${BRIDE_NAME} & ${GROOM_NAME}`}
-        yearFinal={YEAR_FINAL}
-        monthFinal={MONTH_FINAL}
-        dayFinal={DAY_FINAL}
-        hourFinal={HOUR_FINAL}
-        minuteFinal={MINUTE_FINAL}
-        secondFinal={SECOND_FINAL}
-        icon={<MEIcon className="w-16 lg:w-24" />}
-      />
-      <Gallery
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        images={IMAGES}
-      />
-      <Privilege
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        brideParents={[
-          { name: "Ronald Málaga Vásquez" },
-          { name: "Rosalvina Zúñiga Olano" },
-        ]}
-        groomParents={[
-          { name: "Eduardo Castro Román ✝" },
-          { name: "Adalguisa Cúneo Toso" },
-        ]}
-        godparents={[
-          { name: "Edward Vargas Valderrama" },
-          { name: "Maritza Dávila Olano" },
-        ]}
-      />
-      <Celebration
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        ceremonyImages={CEREMONY_IMAGES}
-        receptionImages={RECEPTION_IMAGES}
-        ceremonyTime={CEREMONY_DETAILS.time}
-        ceremonyLocation={CEREMONY_DETAILS.location}
-        ceremonyAddress={CEREMONY_DETAILS.address}
-        ceremonyMapLink={CEREMONY_DETAILS.mapLink}
-        receptionTime={RECEPTION_DETAILS.time}
-        receptionLocation={RECEPTION_DETAILS.location}
-        receptionAddress={RECEPTION_DETAILS.address}
-        receptionMapLink={RECEPTION_DETAILS.mapLink}
-        isMobile={isMobile}
-      />
-      <Passes
-        id={NUM_PASSES}
-        fontDescription={FONT_DESCRIPTION}
-        colorBg={COLOR_BG}
-        colorPasses={COLOR_PASSES}
-      />
-      <Schedule
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        scheduleItems={SCHEDULE_ITEMS}
-      />
-      <GiftCollection
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        modalsData={MODALS_DATA}
-        accountData={ACCOUNT_DATA}
-        locationData={LOCATION_DATA}
-      />
-      <DressCode
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        dressLabel={DRESS_CODE_CONFIG.dressLabel}
-        maleLabel={DRESS_CODE_CONFIG.maleLabel}
-        femaleLabel={DRESS_CODE_CONFIG.femaleLabel}
-        femaleIcon={DRESS_CODE_CONFIG.femaleIcon}
-        maleIcon={DRESS_CODE_CONFIG.maleIcon}
-        femaleDescription={DRESS_CODE_CONFIG.femaleDescription}
-        maleDescription={DRESS_CODE_CONFIG.maleDescription}
-        femaleDressType={DRESS_CODE_CONFIG.femaleDressType}
-        maleDressType={DRESS_CODE_CONFIG.maleDressType}
-        colorGuide={DRESS_CODE_CONFIG.colorGuide}
-        isMobile={isMobile}
-      />
-      <Restriction
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        restrictionConfig={RESTRICTION_CONFIG}
-        isMobile={isMobile}
-      />
-      <RecomendationMusic
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        config={RECOMENDATION_MUSIC_CONFIG}
-        isMobile={isMobile}
-      />
-      <RSVPConfirmation
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        config={RSVP_CONFIRMATION_CONFIG}
-        isMobile={isMobile}
-      />
-      <Note
-        fontTitle={FONT_TITLE}
-        fontDescription={FONT_DESCRIPTION}
-        text={TEXT_NOTE}
-      />
-      <WaterMark />
+      <LoadingPresentation duration={1.5} isVisible={isVisible}>
+        <ModalPresentation isOpen={openModal} duration={1}>
+          <ViewPresentation
+            onClose={() => {
+              setModal(false);
+              setVisible(false);
+            }}
+            husbandName="Gabriel"
+            wifeName="Valentina"
+            fontSize="text-5xl lg:text-6xl"
+            fontTitle="fancy-font-class"
+            fontHusbands={FONT_TITLE}
+            ampersandSize="text-[8rem] lg:text-[12rem]"
+            imageTopSrc="https://tema-verdor.vercel.app/presentacion-flores-2.png"
+            imageBottomSrc="https://tema-verdor.vercel.app/presentacion-flores-1.png"
+            buttonLabel="Ingresar"
+            buttonBg="bg-gray-300 hover:bg-black"
+            buttonTextColor="hover:text-white text-black"
+          />
+        </ModalPresentation>
+
+        <StartPresentation
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          fontSecondary={FONT_SECONDARY}
+          name={`${BRIDE_NAME} & ${GROOM_NAME}`}
+          yearFinal={YEAR_FINAL}
+          monthFinal={MONTH_FINAL}
+          dayFinal={DAY_FINAL}
+          hourFinal={HOUR_FINAL}
+          minuteFinal={MINUTE_FINAL}
+          secondFinal={SECOND_FINAL}
+          icon={<MEIcon className="w-16 lg:w-24" />}
+        />
+        <Gallery
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          images={IMAGES}
+        />
+        <Privilege
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          brideParents={[
+            { name: "Ronald Málaga Vásquez" },
+            { name: "Rosalvina Zúñiga Olano" },
+          ]}
+          groomParents={[
+            { name: "Eduardo Castro Román ✝" },
+            { name: "Adalguisa Cúneo Toso" },
+          ]}
+          godparents={[
+            { name: "Edward Vargas Valderrama" },
+            { name: "Maritza Dávila Olano" },
+          ]}
+        />
+        <Celebration
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          ceremonyImages={CEREMONY_IMAGES}
+          receptionImages={RECEPTION_IMAGES}
+          ceremonyTime={CEREMONY_DETAILS.time}
+          ceremonyLocation={CEREMONY_DETAILS.location}
+          ceremonyAddress={CEREMONY_DETAILS.address}
+          ceremonyMapLink={CEREMONY_DETAILS.mapLink}
+          receptionTime={RECEPTION_DETAILS.time}
+          receptionLocation={RECEPTION_DETAILS.location}
+          receptionAddress={RECEPTION_DETAILS.address}
+          receptionMapLink={RECEPTION_DETAILS.mapLink}
+          isMobile={isMobile}
+        />
+        <Passes
+          id={NUM_PASSES}
+          fontDescription={FONT_DESCRIPTION}
+          colorBg={COLOR_BG}
+          colorPasses={COLOR_PASSES}
+        />
+        <Schedule
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          scheduleItems={SCHEDULE_ITEMS}
+        />
+        <GiftCollection
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          modalsData={MODALS_DATA}
+          accountData={ACCOUNT_DATA}
+          locationData={LOCATION_DATA}
+        />
+        <DressCode
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          dressLabel={DRESS_CODE_CONFIG.dressLabel}
+          maleLabel={DRESS_CODE_CONFIG.maleLabel}
+          femaleLabel={DRESS_CODE_CONFIG.femaleLabel}
+          femaleIcon={DRESS_CODE_CONFIG.femaleIcon}
+          maleIcon={DRESS_CODE_CONFIG.maleIcon}
+          femaleDescription={DRESS_CODE_CONFIG.femaleDescription}
+          maleDescription={DRESS_CODE_CONFIG.maleDescription}
+          femaleDressType={DRESS_CODE_CONFIG.femaleDressType}
+          maleDressType={DRESS_CODE_CONFIG.maleDressType}
+          colorGuide={DRESS_CODE_CONFIG.colorGuide}
+          isMobile={isMobile}
+        />
+        <Restriction
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          restrictionConfig={RESTRICTION_CONFIG}
+          isMobile={isMobile}
+        />
+        <RecomendationMusic
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          config={RECOMENDATION_MUSIC_CONFIG}
+          isMobile={isMobile}
+        />
+        <RSVPConfirmation
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          config={RSVP_CONFIRMATION_CONFIG}
+          isMobile={isMobile}
+        />
+        <Note
+          fontTitle={FONT_TITLE}
+          fontDescription={FONT_DESCRIPTION}
+          text={TEXT_NOTE}
+        />
+        <WaterMark />
+      </LoadingPresentation>
     </>
   );
 };
