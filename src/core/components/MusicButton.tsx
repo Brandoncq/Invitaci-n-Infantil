@@ -28,7 +28,7 @@ const MusicButton: React.FC<MusicButtonProps> = ({
       <audio ref={audioRef} src={musicUrl} />
       {!isVisible && (
         <div
-          className="relative w-20 h-20 lg:w-28 lg:h-28"
+          className="relative w-20 h-20 lg:w-28 lg:h-28 cursor-pointer"
           onClick={togglePlay}
         >
           {isPlaying ? (
@@ -37,7 +37,7 @@ const MusicButton: React.FC<MusicButtonProps> = ({
             <img
               src="https://tema-esmeralda.vercel.app/musica.svg"
               alt="Musica"
-              className="cursor-pointer w-20 h-20 lg:w-28 lg:h-28"
+              className="w-20 h-20 lg:w-28 lg:h-28"
             />
           )}
 
