@@ -21,7 +21,7 @@ import ViewPresentation from "@/core/components/ViewPresentation";
 import MusicButton from "@/core/components/MusicButton";
 import ContentPresentation from "@/core/components/ContentPresentation";
 
-export const Peppapig: React.FC = () => {
+export const Page: React.FC = () => {
   const presentationConfig = {
     isVisiblePresentation: true,
     openModalPresentation: true,
@@ -322,4 +322,4 @@ export const Peppapig: React.FC = () => {
     </>
   );
 };
-export default Peppapig;
+export default Page;
