@@ -3,18 +3,14 @@ import { Column } from "./Column";
 interface ModalDataProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: () => void;
   title?: string;
-  animationOptions: any;
   children: React.ReactNode;
 }
 
 export const ModalData: React.FC<ModalDataProps> = ({
   isOpen,
   onClose,
-  onSubmit,
   title,
-  animationOptions,
   children,
 }) => {
   return (
