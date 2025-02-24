@@ -21,6 +21,8 @@ import ViewPresentation from "@/core/components/ViewPresentation";
 import MusicButton from "@/core/components/MusicButton";
 import ContentPresentation from "@/core/components/ContentPresentation";
 
+export const dynamic = "force-dynamic";
+
 const Page: React.FC = () => {
   const presentationConfig = {
     isVisiblePresentation: true,
