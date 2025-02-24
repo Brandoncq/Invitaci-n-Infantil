@@ -22,7 +22,7 @@ function ViewPresentation({
     sal({
       root: null,
       threshold: 0.1,
-      once: false,
+      once: true,
     });
   },[])
   return (
