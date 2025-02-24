@@ -21,7 +21,7 @@ import ViewPresentation from "@/core/components/ViewPresentation";
 import MusicButton from "@/core/components/MusicButton";
 import ContentPresentation from "@/core/components/ContentPresentation";
 
-export const Page: React.FC = () => {
+const Page: React.FC = () => {
   const presentationConfig = {
     isVisiblePresentation: true,
     openModalPresentation: true,
