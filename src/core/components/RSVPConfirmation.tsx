@@ -90,9 +90,7 @@ export const RSVPConfirmation = ({
       <ModalData
         isOpen={isConfirmation}
         onClose={() => setIsConfirmation(false)}
-        onSubmit={() => setIsConfirmation(false)}
         title="¡Gracias por confirmar tu asistencia!"
-        animationOptions={defaultOptionsChecked}
       >
         <button
           type="button"
