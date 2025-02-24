@@ -1,17 +1,10 @@
 "use client";
-import dynamic from "next/dynamic";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GalleryProps } from "../interfaces/Gallery";
 import { Column } from "./Column";
-const Slider = dynamic(() => import("react-slick"), {
-  ssr: false,
-});
-export const Gallery = ({
-  fontTitle,
-  fontDescription,
-  images,
-}: GalleryProps) => {
+import Slider from "react-slick";
+const Gallery = ({ fontTitle, fontDescription, images }: GalleryProps) => {
   const settings = {
     dots: false,
     className: "center",
@@ -98,3 +91,4 @@ export const Gallery = ({
     </Column>
   );
 };
+export default Gallery;

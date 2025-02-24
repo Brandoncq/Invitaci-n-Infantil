@@ -1,9 +1,12 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { StartPresentation } from "@/core/components/StartPresentation";
 import "@/core/constants/fonts.css";
 import { MEIcon } from "./presentation/icon/ME";
-import { Gallery } from "@/core/components/Gallery";
+const Gallery = dynamic(() => import("@/core/components/Gallery"), {
+  ssr: false,
+});
 import { Images } from "@/core/interfaces/Image";
 import { Privilege } from "@/core/components/Privilege";
 import { Celebration } from "@/core/components/EventLocation";
@@ -20,8 +23,6 @@ import LoadingPresentation from "@/core/components/LoadingPresentation";
 import ViewPresentation from "@/core/components/ViewPresentation";
 import MusicButton from "@/core/components/MusicButton";
 import ContentPresentation from "@/core/components/ContentPresentation";
-
-export const dynamic = "force-dynamic";
 
 const Page: React.FC = () => {
   const presentationConfig = {
