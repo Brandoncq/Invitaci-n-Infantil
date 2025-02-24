@@ -54,7 +54,7 @@ export const MelissaEduardo: React.FC = () => {
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
   const FONT_SECONDARY = "font-river-flows-custom";
-  const CHILD_NAME = "Camila";
+  const CHILD_NAME = "Camila Ramirez";
 
   const VIEW_PRESENTATION_DATA = {
     childName: CHILD_NAME,
@@ -77,7 +77,7 @@ export const MelissaEduardo: React.FC = () => {
   };
 
   const YEAR_FINAL = 2025;
-  const MONTH_FINAL = 2;
+  const MONTH_FINAL = 3;
   const DAY_FINAL = 19;
   const HOUR_FINAL = 0;
   const MINUTE_FINAL = 0;
@@ -143,56 +143,14 @@ export const MelissaEduardo: React.FC = () => {
   const COLOR_PASSES = "#b3c79e";
 
   const SCHEDULE_ITEMS = [
-    {
-      time: "3:00pm",
-      description: "¡Bienvenida y recepción!",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
-      ),
-      isUp: true,
-    },
-    {
-      time: "3:30pm",
-      description: "Juegos y dinámicas",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
-      ),
-      isUp: false,
-    },
-    {
-      time: "4:00pm",
-      description: "Show de animación",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
-      ),
-      isUp: true,
-    },
-    {
-      time: "4:30pm",
-      description: "¡Hora de la piñata!",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
-      ),
-      isUp: false,
-    },
-    {
-      time: "5:00pm",
-      description: "Pastel y cantar 'Feliz Cumpleaños'",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
-      ),
-      isUp: true,
-    },
-    {
-      time: "5:30pm",
-      description: "Entrega de sorpresas y despedida",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
-      ),
-      isUp: false,
-    },
+    { time: "3:00pm", description: "Recepción", icon: <ChurchIcon className="w-fit self-end h-[50px]" />, isUp: true },
+    { time: "3:30pm", description: "Juegos", icon: <ChurchIcon className="w-fit h-[50px]" />, isUp: false },
+    { time: "4:00pm", description: "Show", icon: <ChurchIcon className="w-fit self-end h-[50px]" />, isUp: true },
+    { time: "4:30pm", description: "Piñata", icon: <ChurchIcon className="w-fit h-[50px]" />, isUp: false },
+    { time: "5:00pm", description: "Pastel", icon: <ChurchIcon className="w-fit self-end h-[50px]" />, isUp: true },
+    { time: "5:30pm", description: "Despedida", icon: <ChurchIcon className="w-fit h-[50px]" />, isUp: false },
   ];
-
+  
   const MODALS_DATA = {
     yape: {
       name: "Melissa Aracely Santiago Angel - Yape",
@@ -330,7 +288,7 @@ export const MelissaEduardo: React.FC = () => {
               { name: "Rosalvina Zúñiga Olano" },
             ]}
             groomParents={[
-              { name: "Eduardo Castro Román ✝" },
+              { name: "Eduardo Castro Román" },
               { name: "Adalguisa Cúneo Toso" },
             ]}
             godparents={[

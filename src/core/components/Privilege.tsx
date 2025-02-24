@@ -41,7 +41,7 @@ export const Privilege = ({
               </Column>
               <Column className="gap-2">
                 <span className="font-medium text-sm lg:text-base uppercase">
-                  Mi familia
+                  Mis seres queridos
                 </span>
                 <Column className="text-sm lg:text-base tracking-wider gap-1 text-blackGray">
                   {groomParents.map((familiar, index) => (

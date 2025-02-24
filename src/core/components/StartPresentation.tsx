@@ -21,17 +21,17 @@ export const StartPresentation = ({
       <Column
         crossAxisAlignment="center"
         mainAxisAlignment="end"
-        className="h-[65vh] pb-10 items-center bg-black text-white gap-4 lg:gap-8 bg-[url(https://cdn.discordapp.com/attachments/1342238147811082242/1343421539537653760/0015119_vestido-de-bebe-nina-de-manga-larga-con-tejido-estampado-de-mariposa-rosa.png?ex=67bd364e&is=67bbe4ce&hm=ea28e77d34f780d3a4b61cbe5bc46b3fc95ccd70d71dcf731c080d42289bdf01&)]"
+        className="h-[65vh] pb-10 items-center bg-black text-white gap-4 lg:gap-8 bg-center bg-[url(https://media.discordapp.net/attachments/1342238147811082242/1343439730582356048/0015119_vestido-de-bebe-nina-de-manga-larga-con-tejido-estampado-de-mariposa-rosa.png?ex=67bd473f&is=67bbf5bf&hm=99c3d5e3eadb2cf1d4b90734e677c4884a5eec30a393c0e217e4dcf1816a2351&=&format=webp&quality=lossless&width=594&height=594)]"
       >
         <Column className="gap-10">
-          <h1 className="text-3xl lg:text-6xl text-center font-bold">
+          <h1 className="text-5xl lg:text-6xl text-center font-bold">
             <div className="flex gap-2 lg:gap-4">
               <p className="flex gap-2 lg:gap-4">
                 <span>{name.split(" & ")[0]}</span>
                 <span></span>
               </p>
             </div>
-            <span className="text-[1.7rem] lg:text-[2.5rem] tracking-wide font-bold">
+            <span className="text-[2rem] lg:text-[2.5rem] tracking-wide font-bold">
               {String(dayFinal).padStart(2, "0")}.
               {String(monthFinal).padStart(2, "0")}.{yearFinal}
             </span>
