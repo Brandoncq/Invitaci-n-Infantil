@@ -74,8 +74,8 @@ export const Countdown = ({
       mainAxisAlignment="center"
       crossAxisAlignment="center"
       className="relative w-full gap-3 lg:gap-4 h-[200px]"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      data-sal="slide-up"
+      data-sal-duration="1500"
     >
       <p className="text-3xl lg:text-4xl text-[#000000] -m-2 font-semibold">
         faltan

@@ -15,8 +15,8 @@ export const Restriction = ({
       className={`${
         isMobile && "assistance-ninios"
       } max-lg:py-10 gap-5 w-full text-center`}
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      data-sal="slide-up"
+      data-sal-duration="1500"
     >
       <h2
         className={`retro-signature-custom text-2xl lg:text-4xl font-semibold ${fontTitle}`}

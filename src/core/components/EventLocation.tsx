@@ -30,16 +30,16 @@ export const Celebration = ({
       <>
         <div
           className="w-[80%] lg:w-full h-[230px] lg:h-[250px]"
-          data-aos="fade-up"
-          data-aos-duration="1500"
+          data-sal="slide-up"
+          data-sal-duration="1500"
         >
           <Carousel images={images} />
         </div>
         <Column
           crossAxisAlignment="center"
           className={`gap-3 ${fontDescription}`}
-          data-aos="fade-up"
-          data-aos-duration="1500"
+          data-sal="slide-up"
+          data-sal-duration="1500"
         >
           <h2
             className={`text-xl lg:text-4xl pt-2 text-[#000000] ${fontTitle} font-semibold`}
@@ -78,8 +78,8 @@ export const Celebration = ({
     >
       <h2
         className={`text-2xl lg:text-4xl pt-4 lg:pt-8 ${fontTitle} max-lg:hidden text-[#000000] font-semibold`}
-        data-aos="fade-up"
-        data-aos-duration="1500"
+        data-sal="slide-up"
+        data-sal-duration="1500"
       >
         ¿Dónde y cuándo?
       </h2>
@@ -92,8 +92,8 @@ export const Celebration = ({
         >
           <h2
             className={`lg:hidden max-lg:pb-4 ${fontTitle} text-2xl pt-4 lg:pt-8 text-[#000000] mt-10 font-semibold`}
-            data-aos="fade-up"
-            data-aos-duration="1500"
+            data-sal="slide-up"
+						data-sal-duration="1500"
           >
             ¿Dónde y cuándo?
           </h2>

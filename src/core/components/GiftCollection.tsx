@@ -51,8 +51,8 @@ export const GiftCollection = ({
         mainAxisAlignment="center"
         crossAxisAlignment="center"
         className="bg-white/66 shadow-[0_0_5px_rgba(0,0,0,0.65)] gap-4 lg:gap-5 p-4 py-8 lg:p-12 rounded-lg w-[90%] lg:w-[30rem] text-center"
-        data-aos="fade-up"
-        data-aos-duration="1500"
+        data-sal="slide-up"
+        data-sal-duration="1500"
       >
         <GiftIcon className="h-[50px] lg:h-[60px]" />
         <h2

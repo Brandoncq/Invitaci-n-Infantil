@@ -17,8 +17,8 @@ export const Privilege = ({ fontTitle, fontDescription, brideParents, groomParen
 						mainAxisAlignment="center"
 						crossAxisAlignment="center"
 						className="gap-2 w-full lg:w-[25rem]"
-						data-aos="fade-up"
-						data-aos-duration="1500"
+						data-sal="slide-up"
+						data-sal-duration="1500"
 					>
 						<h2 className={`font-semibold w-full ${fontTitle} text-2xl lg:text-3xl lg:w-[40rem] mt-4 text-[#000000]`}>
 							Con la bendición de <br />
@@ -47,8 +47,8 @@ export const Privilege = ({ fontTitle, fontDescription, brideParents, groomParen
 						crossAxisAlignment="center"
 						mainAxisAlignment="center"
 						className="gap-2"
-						data-aos="fade-up"
-						data-aos-duration="1500"
+						data-sal="slide-up"
+						data-sal-duration="1500"
 					>
 						<h2 className={`font-semibold max-lg:w-[85%] ${fontTitle} text-2xl lg:text-3xl text-[#000000]`}>Junto a nuestros padrinos</h2>
 						<Column className="gap-2 py-5">

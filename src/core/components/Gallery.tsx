@@ -47,8 +47,8 @@ export const Gallery = ({
       mainAxisAlignment="center"
       crossAxisAlignment="center"
       className="gallery-bg py-7 w-full"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      data-sal="slide-up"
+      data-sal-duration="1500"
     >
       <style>
         {`

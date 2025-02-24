@@ -8,8 +8,8 @@ export const Passes = ({ fontDescription, colorBg, colorPasses, id, max = 5 }: P
 			crossAxisAlignment="center"
 			className={`gap-3 text-xl lg:text-3xl py-10 lg:py-14 ${fontDescription}`}
 			style={{ background: colorBg }}
-			data-aos="fade-up"
-			data-aos-duration="1500"
+			data-sal="slide-up"
+			data-sal-duration="1500"
 		>
 			Hemos reservado
 			<div className="flex gap-5">
