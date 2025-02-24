@@ -1,6 +1,5 @@
 "use client";
 import { ChangeEvent, useState } from "react";
-import animationCargando from "../assets/json/check.json";
 import { ModalData } from "./ModalData";
 import { RSVPConfirmationProps } from "../interfaces/RSVPConfirmation";
 import { Column } from "./Column";
@@ -20,15 +19,6 @@ export const RSVPConfirmation = ({
     isMessageValid: true,
   });
   const [isConfirmation, setIsConfirmation] = useState(false);
-
-  const defaultOptionsChecked = {
-    loop: true,
-    autoplay: true,
-    animationData: animationCargando,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
