@@ -9,8 +9,6 @@ import { Privilege } from "@/core/components/Privilege";
 import { Celebration } from "@/core/components/EventLocation";
 import { Schedule } from "@/core/components/Schedule";
 import { ChurchIcon } from "@/core/icons/Church";
-import { YapeIcon } from "@/core/icons/Yape";
-import { PlinIcon } from "@/core/icons/Plin";
 import { DressCode } from "@/core/components/DressCode";
 import { FemaleIcon } from "@/core/icons/FemaleIcon";
 import { MaleIcon } from "@/core/icons/Male";
@@ -172,21 +170,6 @@ export const Peppapig: React.FC = () => {
       isUp: false,
     },
   ];
-
-  const MODALS_DATA = {
-    yape: {
-      name: "Melissa Aracely Santiago Angel - Yape",
-      icon: <YapeIcon className="w-48 aspect-square" />,
-    },
-    plin: {
-      name: "Melissa Aracely Málaga Zuñiga - Plin",
-      icon: <PlinIcon className="p-4 w-36 aspect-square" />,
-    },
-    location: {
-      name: "Melissa Aracely Málaga Zuñiga - Ubicación",
-      icon: null,
-    },
-  };
 
   const DRESS_CODE_CONFIG = {
     fontTitle: FONT_TITLE,
