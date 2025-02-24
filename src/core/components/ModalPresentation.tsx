@@ -14,20 +14,14 @@ const ModalPresentation: React.FC<ModalProps> = ({
     if (isOpen) {
       setVisible(true);
       setClosing(false);
-      document.body.style.overflow = "hidden";
     } else {
       setClosing(true);
       setTimeout(() => {
         setVisible(false);
         setClosing(false);
       }, duration * 1000);
-      document.body.style.overflow = "";
     }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
+  }, [isOpen, duration]);
 
   if (!visible) return null;
 
@@ -36,9 +30,10 @@ const ModalPresentation: React.FC<ModalProps> = ({
       className={`fixed inset-0 flex justify-center items-center z-50 transition-opacity duration-300 ${
         isOpen || closing ? "opacity-100" : "opacity-0"
       }`}
+      style={{ overflow: "hidden" }} // Evita el scroll sin modificar el `document`
     >
       <div
-        className="bg-white relative transform transition-all duration-300 ease-out w-full h-lvh"
+        className="bg-white relative transform transition-all duration-300 ease-out w-full h-lvh overflow-hidden"
         style={{
           animation: closing
             ? `fadeOut ${duration}s ease-in forwards`
