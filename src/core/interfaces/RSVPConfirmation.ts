@@ -1,7 +1,6 @@
 export interface RSVPConfirmationProps {
 	fontTitle: string;
 	fontDescription: string;
-	isMobile:boolean;
 	config: {
 		url: string;
 		text?: string;

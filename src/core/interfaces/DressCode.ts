@@ -11,5 +11,4 @@ export interface DressCodeProps {
 	femaleDressType: string;
 	maleDressType: string;
 	colorGuide?: boolean;
-	isMobile:boolean;
 }

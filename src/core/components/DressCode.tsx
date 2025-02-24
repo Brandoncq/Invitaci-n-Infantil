@@ -17,15 +17,12 @@ export const DressCode = ({
   femaleDressType,
   maleDressType,
   colorGuide,
-  isMobile,
 }: DressCodeProps) => {
   return (
     <Column
       mainAxisAlignment="center"
       crossAxisAlignment="center"
-      className={`${
-        isMobile && "assistance-assistance "
-      } celebration py-8 lg:py-12 gap-3 lg:gap-5 w-full text-center`}
+      className="celebration py-8 lg:py-12 gap-3 lg:gap-5 w-full text-center"
       data-aos="fade-up"
       data-aos-duration="1500"
     >

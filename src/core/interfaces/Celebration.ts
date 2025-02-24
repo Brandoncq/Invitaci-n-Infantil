@@ -11,5 +11,4 @@ export interface CelebrationProps {
 	receptionLocation: string;
 	receptionAddress: string;
 	receptionMapLink: string;
-	isMobile:boolean;
 }
