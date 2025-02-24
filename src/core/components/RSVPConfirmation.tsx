@@ -8,7 +8,6 @@ import { Column } from "./Column";
 export const RSVPConfirmation = ({
   fontTitle,
   fontDescription,
-  isMobile,
   config,
 }: RSVPConfirmationProps) => {
   const [formData, setFormData] = useState({
@@ -105,9 +104,7 @@ export const RSVPConfirmation = ({
       <Column
         mainAxisAlignment="center"
         crossAxisAlignment="center"
-        className={`${
-          isMobile && "assistance-assistance"
-        } gap-3 max-lg:pt-10 max-lg:pb-16 w-full`}
+        className="gap-3 max-lg:pt-10 max-lg:pb-16 w-full"
         data-aos="fade-up"
         data-aos-duration="1500"
       >

@@ -6,15 +6,12 @@ export const Restriction = ({
   fontTitle,
   fontDescription,
   restrictionConfig,
-  isMobile,
 }: RestrictionProps) => {
   return (
     <Column
       mainAxisAlignment="center"
       crossAxisAlignment="center"
-      className={`${
-        isMobile && "assistance-ninios"
-      } max-lg:py-10 gap-5 w-full text-center`}
+      className="max-lg:py-10 gap-5 w-full text-center"
       data-sal="slide-up"
       data-sal-duration="1500"
     >

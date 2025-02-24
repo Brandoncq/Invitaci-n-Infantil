@@ -41,7 +41,7 @@ function ViewPresentation({
         </span>
 
         <h1
-          className={`relative pb-3 lg:pb-5 ${fontSize} flex flex-col text-center gap-3 mb-2`}
+          className={`relative pb-3 lg:pb-5 ${fontSize} flex flex-col text-center gap-3 mb-4`}
         >
           <span
             className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#433b314d] ${fontHusbands} ${ampersandSize} cinzel-decorative-custom`}

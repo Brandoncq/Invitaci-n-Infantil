@@ -10,14 +10,13 @@ function LoadingPresentation({
   isVisible,
 }: LoadingPresentationProps) {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), duration * 1000);
     return () => clearTimeout(timer);
   }, [duration]);
 
   return (
-    <div className="w-full h-lvh bg-white">
+    <div className="w-full min-h-lvh bg-white">
       {isVisible && (
         <div className="w-full h-lvh bg-white flex justify-center items-center">
           <div className="w-24 h-24">
@@ -25,7 +24,9 @@ function LoadingPresentation({
           </div>
         </div>
       )}
-      {!loading && children}
+      <div className={`${!loading ? "" : "hidden"} w-full h-lvh bg-white`}>
+        {children}
+      </div>
     </div>
   );
 }
