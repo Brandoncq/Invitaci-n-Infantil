@@ -1,7 +1,6 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MEIcon } from "../../app/(pages)/melissa-eduardo/presentation/icon/ME";
 import { GalleryProps } from "../interfaces/Gallery";
 import { Column } from "./Column";
 
@@ -66,10 +65,10 @@ export const Gallery = ({
         <p
           className={`text-2xl ${fontTitle} lg:text-4xl text-[#000000] font-semibold`}
         >
-          Nuestros momentos
+          Mi cumpleaños
         </p>
         <span className={`text-sm ${fontDescription} lg:text-base`}>
-          Compartimos con ustedes nuestro amor
+          Comparto mis mejores momentos
         </span>
       </Column>
 
@@ -88,7 +87,6 @@ export const Gallery = ({
                   src={imagen.src}
                   alt={imagen.alt}
                 />
-                <MEIcon className="absolute bottom-14 lg:bottom-32 left-1/2 -translate-x-1/2 transform !w-10 !h-12 lg:!w-20 lg:!h-24 z-10" />
               </div>
             ))}
           </Slider>

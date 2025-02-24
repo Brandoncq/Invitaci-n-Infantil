@@ -22,13 +22,13 @@ export const DressCode = ({
     <Column
       mainAxisAlignment="center"
       crossAxisAlignment="center"
-      className="celebration py-8 lg:py-12 gap-3 lg:gap-5 w-full text-center"
+      className="celebration py-8 lg:py-12 gap-3 lg:gap-5 w-full text-center relative"
       data-sal="slide-up"
       data-sal-duration="1500"
     >
       <DressIcon className="h-[70px] lg:h-[80px]" />
       <h2
-        className={`retro-signature-custom text-2xl lg:text-4xl -mb-2 font-semibold ${fontTitle}`}
+        className={`retro-signature-custom text-xl lg:text-4xl max-lg:px-20 -mb-2 font-semibold ${fontTitle}`}
       >
         {dressLabel}
       </h2>
@@ -98,6 +98,22 @@ export const DressCode = ({
           </Column>
         </Row>
       </Column>
+      <div className="absolute w-full h-full flex flex-wrap justify-between">
+        <div className="w-1/5">
+          <img
+            src="https://cdn.discordapp.com/attachments/1342238147811082242/1343428568469864551/fondo-nube-estrella.png?ex=67bd3cda&is=67bbeb5a&hm=1afa02e333bb30c95d6c043deb36de822777170f283ebb1b7e5b0e702f43de18&"
+            alt=""
+            className="w-52 h-auto"
+          />
+        </div>
+        <div className="w-1/5 flex justify-end items-end">
+          <img
+            src="https://cdn.discordapp.com/attachments/1342238147811082242/1343432053479444480/fondo-nube-estrella-2.png?ex=67bd4019&is=67bbee99&hm=25321385754d6cbf4cd0517fd22d732289c0bdef9d8bb759ec1053ad2b944cc1&"
+            alt=""
+            className="w-52 h-auto"
+          />
+        </div>
+      </div>
     </Column>
   );
 };

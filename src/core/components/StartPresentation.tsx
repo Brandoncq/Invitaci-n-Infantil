@@ -21,20 +21,17 @@ export const StartPresentation = ({
       <Column
         crossAxisAlignment="center"
         mainAxisAlignment="end"
-        className="h-[65vh] pb-24 items-center bg-black text-white gap-4 lg:gap-8"
+        className="h-[65vh] pb-10 items-center bg-black text-white gap-4 lg:gap-8 bg-[url(https://cdn.discordapp.com/attachments/1342238147811082242/1343421539537653760/0015119_vestido-de-bebe-nina-de-manga-larga-con-tejido-estampado-de-mariposa-rosa.png?ex=67bd364e&is=67bbe4ce&hm=ea28e77d34f780d3a4b61cbe5bc46b3fc95ccd70d71dcf731c080d42289bdf01&)]"
       >
-        {icon && <div className="w-16 lg:w-24">{icon}</div>}
-
         <Column className="gap-10">
-          <h1 className="text-3xl lg:text-5xl text-center">
+          <h1 className="text-3xl lg:text-6xl text-center font-bold">
             <div className="flex gap-2 lg:gap-4">
               <p className="flex gap-2 lg:gap-4">
                 <span>{name.split(" & ")[0]}</span>
-                <span> & </span>
-                <span className="ml-2 lg:ml-3">{name.split(" & ")[1]}</span>
+                <span></span>
               </p>
             </div>
-            <span className="text-[1.7rem] lg:text-[2.5rem] tracking-wide">
+            <span className="text-[1.7rem] lg:text-[2.5rem] tracking-wide font-bold">
               {String(dayFinal).padStart(2, "0")}.
               {String(monthFinal).padStart(2, "0")}.{yearFinal}
             </span>

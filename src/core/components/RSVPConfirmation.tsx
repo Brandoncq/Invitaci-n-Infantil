@@ -30,7 +30,9 @@ export const RSVPConfirmation = ({
     },
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -104,7 +106,7 @@ export const RSVPConfirmation = ({
       <Column
         mainAxisAlignment="center"
         crossAxisAlignment="center"
-        className="gap-3 max-lg:pt-10 max-lg:pb-16 w-full"
+        className="gap-3 max-lg:pt-10 max-lg:pb-16 w-full mt-28"
         data-aos="fade-up"
         data-aos-duration="1500"
       >
@@ -169,7 +171,7 @@ export const RSVPConfirmation = ({
           <textarea
             id="message"
             name="message"
-            placeholder="Mensaje para los novios:"
+            placeholder="Mensaje el cumpleañero:"
             className={`w-full h-28 resize-none border py-2 px-4 hover:bg-[#ceefd5a6] hover:border-[#5a8766a6] text-sm rounded-md focus:outline-none focus:bg-[#ceefd548] placeholder-[#212121] focus:border-[#5a8766a6] ${
               !formData.isMessageValid
                 ? "bg-[#ff404033] border-[#ff4040]"
@@ -178,10 +180,10 @@ export const RSVPConfirmation = ({
             value={formData.message}
             onChange={handleChange}
           ></textarea>
-          <div className="flex justify-end">
+          <div className="flex justify-end mb-2">
             <button
               onClick={handleSubmit}
-              className="button-secundario w-[150px] text-xs lg:text-sm"
+              className="button-secundario w-[150px] text-xs lg:text-sm bg-slate-300 text-center px-5 py-2 rounded-lg"
             >
               Enviar
             </button>

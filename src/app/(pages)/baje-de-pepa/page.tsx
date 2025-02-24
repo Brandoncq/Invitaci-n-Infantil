@@ -54,26 +54,26 @@ export const MelissaEduardo: React.FC = () => {
   const FONT_TITLE = "font-cinzel-custom";
   const FONT_DESCRIPTION = "font-popins-custom";
   const FONT_SECONDARY = "font-river-flows-custom";
-  const BRIDE_NAME = "Melissa";
-  const GROOM_NAME = "Eduardo";
+  const CHILD_NAME = "Camila";
 
   const VIEW_PRESENTATION_DATA = {
-    husbandName: BRIDE_NAME,
-    wifeName: GROOM_NAME,
-    fontSize: "text-5xl lg:text-6xl",
+    childName: CHILD_NAME,
+    fontSize: "text-5xl lg:text-8xl",
     fontTitle: FONT_DESCRIPTION,
-    fontHusbands: FONT_TITLE,
+    fontChild: FONT_TITLE,
     ampersandSize: "text-[8rem] lg:text-[12rem]",
-    imageTopSrc: "https://tema-verdor.vercel.app/presentacion-flores-2.png",
-    imageBottomSrc: "https://tema-verdor.vercel.app/presentacion-flores-1.png",
+    imageTopSrc:
+      "https://cdn.discordapp.com/attachments/1342238147811082242/1343416707884253315/carnaval.png?ex=67bd31ce&is=67bbe04e&hm=e43f97d4d18938a41de7e8bdc735ab121d95bebb558d8aaaf86665e1149c01c4&",
+    imageBottomSrc:
+      "https://cdn.discordapp.com/attachments/1342238147811082242/1343420077302747216/peppa-pig-globos.png?ex=67bd34f1&is=67bbe371&hm=837af5c89ea761780f5beddd739a3de99bb1d020342230b62915beb2fc01af59&",
     buttonLabel: "Ingresar",
-    buttonBg: "bg-gray-300 hover:bg-black",
-    buttonTextColor: "hover:text-white text-black",
+    buttonBg: "bg-pink-500 hover:bg-pink-700",
+    buttonTextColor: "hover:text-white text-white",
   };
 
   const MUSICBUTTON_DATA = {
     musicUrl:
-      "https://res.cloudinary.com/dmo6ofy2z/video/upload/v1740252349/Feliz_Me_Siento_nmosap.mp3",
+      "https://res.cloudinary.com/db8eroacq/video/upload/v1740370118/Theme_Music_From_Peppa_Pig_-_Instrumental_aq6ten.mp3",
   };
 
   const YEAR_FINAL = 2025;
@@ -84,17 +84,35 @@ export const MelissaEduardo: React.FC = () => {
   const SECOND_FINAL = 0;
 
   const IMAGES: Images[] = [
-    { src: "https://picsum.photos/2200/3300", alt: "Random Image 1" },
-    { src: "https://picsum.photos/3300/2200", alt: "Random Image 2" },
     {
-      src: "https://picsum.photos/2200/3300",
+      src: "https://images.unsplash.com/photo-1577998474517-7eeeed4e448a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Random Image 1",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1583875762487-5f8f7c718d14?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Random Image 2",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1562346531-6fd51e998566?q=80&w=2018&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Random Image 4",
       class: "!object-top",
     },
-    { src: "https://picsum.photos/3200/2200", alt: "Random Image 6" },
-    { src: "https://picsum.photos/2100/3300", alt: "Random Image 8" },
-    { src: "https://picsum.photos/3000/2200", alt: "Random Image 9" },
-    { src: "https://picsum.photos/2000/3300", alt: "Random Image 10" },
+    {
+      src: "https://images.unsplash.com/photo-1564157465092-eaa2a4c834ca?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Random Image 6",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1562773230-19b3d4eb1661?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Random Image 8",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1563981806515-cffc4485d070?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Random Image 9",
+    },
+    {
+      src: "https://plus.unsplash.com/premium_photo-1703389457620-b76c38b8b0f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Random Image 10",
+    },
   ];
 
   const CEREMONY_IMAGES = [
@@ -126,40 +144,24 @@ export const MelissaEduardo: React.FC = () => {
 
   const SCHEDULE_ITEMS = [
     {
-      time: "12:00pm",
-      description: "¡Dijimos que sí!",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
-      ),
-      isUp: true,
-    },
-    {
-      time: "1:30pm",
-      description: "Recepción",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
-      ),
-      isUp: false,
-    },
-    {
-      time: "2:30pm",
-      description: "Ceremonia Civil",
-      icon: (
-        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
-      ),
-      isUp: true,
-    },
-    {
       time: "3:00pm",
-      description: "Vals y Brindis",
+      description: "¡Bienvenida y recepción!",
       icon: (
-        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
+        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
       ),
-      isUp: false,
+      isUp: true,
     },
     {
       time: "3:30pm",
-      description: "Almuerzo",
+      description: "Juegos y dinámicas",
+      icon: (
+        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
+      ),
+      isUp: false,
+    },
+    {
+      time: "4:00pm",
+      description: "Show de animación",
       icon: (
         <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
       ),
@@ -167,7 +169,23 @@ export const MelissaEduardo: React.FC = () => {
     },
     {
       time: "4:30pm",
-      description: "¡Vamos a Festejar!",
+      description: "¡Hora de la piñata!",
+      icon: (
+        <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
+      ),
+      isUp: false,
+    },
+    {
+      time: "5:00pm",
+      description: "Pastel y cantar 'Feliz Cumpleaños'",
+      icon: (
+        <ChurchIcon className="w-fit max-lg:self-end self-center object-contain h-[50px]" />
+      ),
+      isUp: true,
+    },
+    {
+      time: "5:30pm",
+      description: "Entrega de sorpresas y despedida",
       icon: (
         <ChurchIcon className="w-fit max-lg:self-start self-center object-contain h-[50px]" />
       ),
@@ -205,19 +223,19 @@ export const MelissaEduardo: React.FC = () => {
   const DRESS_CODE_CONFIG = {
     fontTitle: FONT_TITLE,
     fontDescription: FONT_DESCRIPTION,
-    dressLabel: "Dress Code",
-    maleLabel: "Hombres",
-    femaleLabel: "Mujeres",
+    dressLabel: "Código de Vestimenta",
+    maleLabel: "Niños",
+    femaleLabel: "Niñas",
     femaleIcon: <FemaleIcon className="w-12 h-12" />,
     maleIcon: <MaleIcon className="w-12 h-12" />,
     femaleDescription: [
-      "El blanco es exclusivo para la novia",
-      "No colores claros",
-      "(beige, perla, champagne, dorado)",
+      "Vestido cómodo y elegante",
+      "Evitar colores demasiado llamativos",
+      "(fluorescentes o neón)",
     ],
-    maleDescription: ["Traje oscuro", "Corbata", "Zapatos formales"],
-    femaleDressType: "Vestido de gala",
-    maleDressType: "Traje formal",
+    maleDescription: ["Pantalón y camisa formal", "Zapatos cómodos"],
+    femaleDressType: "Vestido elegante",
+    maleDressType: "Conjunto formal",
     colorGuide: true,
   };
 
@@ -239,7 +257,7 @@ export const MelissaEduardo: React.FC = () => {
 
   const RSVP_CONFIRMATION_CONFIG = {
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfNVRvOfUmgY8P5K2g0sIiU8_35OHIpkLa3hRKHJoOEv1rwUQ/formResponse",
-    text: "Nos encantaría que nos confirmes si podrás acompañarnos antes del 20 de Octubre.",
+    text: "Me encantaría que me confirmes tu asistencia a la celebración antes del 20 de Octubre.",
     fields: {
       name: "entry.450108234",
       phone: "entry.145471448",
@@ -264,11 +282,10 @@ export const MelissaEduardo: React.FC = () => {
         >
           <ViewPresentation
             onClose={closePresentation}
-            husbandName={VIEW_PRESENTATION_DATA.husbandName}
-            wifeName={VIEW_PRESENTATION_DATA.wifeName}
+            childName={VIEW_PRESENTATION_DATA.childName}
             fontSize={VIEW_PRESENTATION_DATA.fontSize}
             fontTitle={VIEW_PRESENTATION_DATA.fontTitle}
-            fontHusbands={VIEW_PRESENTATION_DATA.fontHusbands}
+            fontChild={VIEW_PRESENTATION_DATA.fontChild}
             ampersandSize={VIEW_PRESENTATION_DATA.ampersandSize}
             imageTopSrc={VIEW_PRESENTATION_DATA.imageTopSrc}
             imageBottomSrc={VIEW_PRESENTATION_DATA.imageBottomSrc}
@@ -291,7 +308,7 @@ export const MelissaEduardo: React.FC = () => {
             fontTitle={FONT_TITLE}
             fontDescription={FONT_DESCRIPTION}
             fontSecondary={FONT_SECONDARY}
-            name={`${BRIDE_NAME} & ${GROOM_NAME}`}
+            name={CHILD_NAME}
             yearFinal={YEAR_FINAL}
             monthFinal={MONTH_FINAL}
             dayFinal={DAY_FINAL}
@@ -335,23 +352,10 @@ export const MelissaEduardo: React.FC = () => {
             receptionAddress={RECEPTION_DETAILS.address}
             receptionMapLink={RECEPTION_DETAILS.mapLink}
           />
-          <Passes
-            id={NUM_PASSES}
-            fontDescription={FONT_DESCRIPTION}
-            colorBg={COLOR_BG}
-            colorPasses={COLOR_PASSES}
-          />
           <Schedule
             fontTitle={FONT_TITLE}
             fontDescription={FONT_DESCRIPTION}
             scheduleItems={SCHEDULE_ITEMS}
-          />
-          <GiftCollection
-            fontTitle={FONT_TITLE}
-            fontDescription={FONT_DESCRIPTION}
-            modalsData={MODALS_DATA}
-            accountData={ACCOUNT_DATA}
-            locationData={LOCATION_DATA}
           />
           <DressCode
             fontTitle={FONT_TITLE}
@@ -366,16 +370,6 @@ export const MelissaEduardo: React.FC = () => {
             femaleDressType={DRESS_CODE_CONFIG.femaleDressType}
             maleDressType={DRESS_CODE_CONFIG.maleDressType}
             colorGuide={DRESS_CODE_CONFIG.colorGuide}
-          />
-          <Restriction
-            fontTitle={FONT_TITLE}
-            fontDescription={FONT_DESCRIPTION}
-            restrictionConfig={RESTRICTION_CONFIG}
-          />
-          <RecomendationMusic
-            fontTitle={FONT_TITLE}
-            fontDescription={FONT_DESCRIPTION}
-            config={RECOMENDATION_MUSIC_CONFIG}
           />
           <RSVPConfirmation
             fontTitle={FONT_TITLE}

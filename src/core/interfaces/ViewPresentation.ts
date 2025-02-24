@@ -1,10 +1,9 @@
 export interface ViewProps {
     onClose: () => void;
-    husbandName: string;
-    wifeName: string;
+    childName: string;
     fontSize?: string;
     fontTitle?: string;
-    fontHusbands?: string;
+    fontChild?: string;
     ampersandSize?: string;
     imageTopSrc?: string;
     imageBottomSrc?: string;
