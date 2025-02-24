@@ -1,9 +1,9 @@
 export const metadata = {
   //metadataBase: new URL("https://suadoly.com"),
-  title: "Invitación de Boda",
-  description: "Acompáñanos en nuestro día especial",
+  title: "Invitación de cumpleaños",
+  description: "Acompáñame en mi un día especial para mi",
   openGraph: {
-    title: "Invitación de Boda",
+    title: "Invitación de cumpleaños",
     url: "https://Suadoly.com",
     images: ["/melissa-eduardo/ME.svg"],
     siteName: "Suadoly",
@@ -14,7 +14,7 @@ export const metadata = {
     { name: "Davis Brandon", url: "https://github.com/Brandoncq" },
   ],
   appleWebApp: {
-    title: "Invitación de Boda",
+    title: "Invitación de cumpleaños",
   },
 };
 

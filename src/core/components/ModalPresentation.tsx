@@ -30,7 +30,7 @@ const ModalPresentation: React.FC<ModalProps> = ({
       className={`fixed inset-0 flex justify-center items-center z-50 transition-opacity duration-300 ${
         isOpen || closing ? "opacity-100" : "opacity-0"
       }`}
-      style={{ overflow: "hidden" }} // Evita el scroll sin modificar el `document`
+      style={{ overflow: "hidden" }}
     >
       <div
         className="bg-white relative transform transition-all duration-300 ease-out w-full h-lvh overflow-hidden"
