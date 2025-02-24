@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useState } from "react";
 import { StartPresentation } from "@/core/components/StartPresentation";
@@ -24,7 +23,7 @@ import ViewPresentation from "@/core/components/ViewPresentation";
 import MusicButton from "@/core/components/MusicButton";
 import ContentPresentation from "@/core/components/ContentPresentation";
 
-export const MelissaEduardo: React.FC = () => {
+export const Peppapig: React.FC = () => {
   const presentationConfig = {
     isVisiblePresentation: true,
     openModalPresentation: true,
@@ -340,4 +339,4 @@ export const MelissaEduardo: React.FC = () => {
     </>
   );
 };
-export default MelissaEduardo;
+export default Peppapig;
