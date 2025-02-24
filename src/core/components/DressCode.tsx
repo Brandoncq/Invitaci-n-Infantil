@@ -23,8 +23,8 @@ export const DressCode = ({
       mainAxisAlignment="center"
       crossAxisAlignment="center"
       className="celebration py-8 lg:py-12 gap-3 lg:gap-5 w-full text-center"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      data-sal="slide-up"
+      data-sal-duration="1500"
     >
       <DressIcon className="h-[70px] lg:h-[80px]" />
       <h2

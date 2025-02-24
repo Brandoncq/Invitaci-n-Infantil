@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import animationCargando from "../assets/json/check.json";
 import { ModalData } from "./ModalData";
 import { RSVPConfirmationProps } from "../interfaces/RSVPConfirmation";
@@ -30,7 +30,7 @@ export const RSVPConfirmation = ({
     },
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -40,9 +40,7 @@ export const RSVPConfirmation = ({
     }));
   };
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     const { name, confirmation, message, phone } = formData;
 
     if (!name.trim() || !confirmation.trim() || !message.trim()) {
@@ -120,8 +118,8 @@ export const RSVPConfirmation = ({
             {config.text}
           </p>
         )}
-        <form
-          className={`flex flex-col gap-2 w-[80%] lg:w-[30rem] text-[#212121] ${fontDescription}`}
+        <Column
+          className={`gap-2 w-[80%] lg:w-[30rem] text-[#212121] ${fontDescription}`}
         >
           <div className="max-lg:flex-col flex gap-2">
             <input
@@ -182,14 +180,13 @@ export const RSVPConfirmation = ({
           ></textarea>
           <div className="flex justify-end">
             <button
-              type="submit"
               onClick={handleSubmit}
               className="button-secundario w-[150px] text-xs lg:text-sm"
             >
               Enviar
             </button>
           </div>
-        </form>
+        </Column>
       </Column>
     </>
   );

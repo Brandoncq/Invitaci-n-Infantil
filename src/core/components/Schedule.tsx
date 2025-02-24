@@ -35,8 +35,8 @@ export const Schedule = ({ fontTitle, fontDescription, scheduleItems }: Schedule
 	return (
 		<section
 			className="relative flex items-center justify-center py-20 lg:pb-40 pt-36 lg:pt-[15rem] bg-[#ffffff00] flex-col drugs-trial-custom"
-			data-aos="fade-up"
-			data-aos-duration="1500"
+			data-sal="slide-up"
+			data-sal-duration="1500"
 		>
 			<p className={`retro-signature-regular text-2xl lg:text-4xl top-10 lg:top-12 absolute text-[#000000] font-semibold ${fontTitle}`}>Itinerario</p>
 			<ol className="flex max-lg:flex-col max-lg:h-[400px] lg:w-[700px] justify-between relative after:content-[''] lg:after:block lg:after:w-full lg:after:border-b-2 lg:after:border-dotted lg:after:border-blackGray after:absolute lg:after:top-1/2 lg:after:left-0 lg:after:translate-y-[-50%] top-0 after:left-1/2 max-lg:after:w-[2px] max-lg:after:h-full max-lg:after:bg-[radial-gradient(circle,_#000_1.2px,_transparent_1.2px)] max-lg:after:bg-[length:2px_8px] max-lg:after:-translate-x-1/2">

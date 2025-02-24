@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { ModalData } from "./ModalData";
 import animationCargando from "../assets/json/check.json";
 import { MusicIcon } from "../icons/Music";
@@ -29,7 +29,7 @@ export const RecomendationMusic = ({
     },
   };
 
-  const handleChangeMusic = (e: any) => {
+  const handleChangeMusic = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -40,9 +40,7 @@ export const RecomendationMusic = ({
     }));
   };
 
-  const handleSubmitMusic = async (e: any) => {
-    e.preventDefault();
-
+  const handleSubmitMusic = async () => {
     const { name, message } = formData;
 
     if (!name.trim()) {
@@ -107,8 +105,8 @@ export const RecomendationMusic = ({
         title="Ingresa la información"
         animationOptions={defaultOptionsChecked}
       >
-        <form
-          className={`flex flex-col gap-2 w-[80%] lg:w-[90%] text-[#212121] ${fontDescription}`}
+        <Column
+          className={`gap-2 w-[80%] lg:w-[90%] text-[#212121] ${fontDescription}`}
         >
           <input
             id="name"
@@ -138,22 +136,21 @@ export const RecomendationMusic = ({
           />
           <div className="flex justify-end">
             <button
-              type="submit"
               onClick={handleSubmitMusic}
               className="button-enviar text-xs lg:text-sm"
             >
               Enviar
             </button>
           </div>
-        </form>
+        </Column>
       </ModalData>
 
       <Column
         mainAxisAlignment="center"
         crossAxisAlignment="center"
         className="gap-5 w-full py-7"
-        data-aos="fade-up"
-        data-aos-duration="1500"
+        data-sal="slide-up"
+        data-sal-duration="1500"
       >
         <h2
           className={`retro-signature-regular text-2xl lg:text-4xl text-[#000000] font-semibold ${fontTitle}`}

@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { ViewProps } from "../interfaces/ViewPresentation";
+import sal from 'sal.js';
+import 'sal.js/dist/sal.css';
 
 function ViewPresentation({
   onClose,
@@ -14,6 +17,14 @@ function ViewPresentation({
   buttonBg = "bg-gray-500",
   buttonTextColor = "text-white",
 }: ViewProps) {
+
+  useEffect(()=>{
+    sal({
+      root: null,
+      threshold: 0.1,
+      once: true,
+    });
+  },[])
   return (
     <div className="w-full h-lvh flex justify-center items-center flex-col">
       <img
