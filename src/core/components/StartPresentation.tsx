@@ -14,7 +14,6 @@ export const StartPresentation = ({
   hourFinal,
   minuteFinal,
   secondFinal,
-  icon,
 }: StartPresentationProps) => {
   return (
     <div className={`min-h-screen ${fontTitle}`}>

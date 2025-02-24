@@ -7,8 +7,6 @@ function ViewPresentation({
   onClose,
   childName,
   fontSize = "text-4xl lg:text-6xl",
-  fontTitle = "river-flows-custom",
-  fontChild = "river-flows-custom",
   imageTopSrc = "./presentacion-flores-2.png",
   imageBottomSrc = "./presentacion-flores-1.png",
   buttonLabel = "Salir",
@@ -24,8 +22,16 @@ function ViewPresentation({
   }, []);
   return (
     <div className="relative w-full h-lvh flex justify-center items-center flex-col">
-        <img className="absolute top-0 left-0 w-[10rem] lg:w-[20rem]" src={imageTopSrc} alt="flores-2" />
-        <img className="absolute top-0 right-0 w-[10rem] lg:w-[20rem]" src={imageTopSrc} alt="flores-2" />
+      <img
+        className="absolute top-0 left-0 w-[10rem] lg:w-[20rem]"
+        src={imageTopSrc}
+        alt="flores-2"
+      />
+      <img
+        className="absolute top-0 right-0 w-[10rem] lg:w-[20rem]"
+        src={imageTopSrc}
+        alt="flores-2"
+      />
       <img
         className="w-[300px] lg:w-[380px]"
         src={imageBottomSrc}

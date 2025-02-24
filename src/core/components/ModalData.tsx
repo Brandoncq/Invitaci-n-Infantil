@@ -1,4 +1,3 @@
-import Lottie from "react-lottie";
 import { Column } from "./Column";
 
 interface ModalDataProps {

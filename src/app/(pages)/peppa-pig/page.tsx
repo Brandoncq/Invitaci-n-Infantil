@@ -8,17 +8,13 @@ import { Gallery } from "@/core/components/Gallery";
 import { Images } from "@/core/interfaces/Image";
 import { Privilege } from "@/core/components/Privilege";
 import { Celebration } from "@/core/components/EventLocation";
-import { Passes } from "@/core/components/Passes";
 import { Schedule } from "@/core/components/Schedule";
 import { ChurchIcon } from "@/core/icons/Church";
-import { GiftCollection } from "@/core/components/GiftCollection";
 import { YapeIcon } from "@/core/icons/Yape";
 import { PlinIcon } from "@/core/icons/Plin";
 import { DressCode } from "@/core/components/DressCode";
 import { FemaleIcon } from "@/core/icons/FemaleIcon";
 import { MaleIcon } from "@/core/icons/Male";
-import { Restriction } from "@/core/components/Restriction";
-import { RecomendationMusic } from "@/core/components/RecomendationMusic";
 import { RSVPConfirmation } from "@/core/components/RSVPConfirmation";
 import { Note } from "@/core/components/Note";
 import { WaterMark } from "@/core/components/WaterMark";
@@ -139,19 +135,45 @@ export const MelissaEduardo: React.FC = () => {
     mapLink: "https://maps.app.goo.gl/ogCGqU4288VRrDjN8",
   };
 
-  const NUM_PASSES = 2;
-  const COLOR_BG = "#f4ffe8";
-  const COLOR_PASSES = "#b3c79e";
-
   const SCHEDULE_ITEMS = [
-    { time: "3:00pm", description: "Recepción", icon: <ChurchIcon className="w-fit self-end h-[50px]" />, isUp: true },
-    { time: "3:30pm", description: "Juegos", icon: <ChurchIcon className="w-fit h-[50px]" />, isUp: false },
-    { time: "4:00pm", description: "Show", icon: <ChurchIcon className="w-fit self-end h-[50px]" />, isUp: true },
-    { time: "4:30pm", description: "Piñata", icon: <ChurchIcon className="w-fit h-[50px]" />, isUp: false },
-    { time: "5:00pm", description: "Pastel", icon: <ChurchIcon className="w-fit self-end h-[50px]" />, isUp: true },
-    { time: "5:30pm", description: "Despedida", icon: <ChurchIcon className="w-fit h-[50px]" />, isUp: false },
+    {
+      time: "3:00pm",
+      description: "Recepción",
+      icon: <ChurchIcon className="w-fit self-end h-[50px]" />,
+      isUp: true,
+    },
+    {
+      time: "3:30pm",
+      description: "Juegos",
+      icon: <ChurchIcon className="w-fit h-[50px]" />,
+      isUp: false,
+    },
+    {
+      time: "4:00pm",
+      description: "Show",
+      icon: <ChurchIcon className="w-fit self-end h-[50px]" />,
+      isUp: true,
+    },
+    {
+      time: "4:30pm",
+      description: "Piñata",
+      icon: <ChurchIcon className="w-fit h-[50px]" />,
+      isUp: false,
+    },
+    {
+      time: "5:00pm",
+      description: "Pastel",
+      icon: <ChurchIcon className="w-fit self-end h-[50px]" />,
+      isUp: true,
+    },
+    {
+      time: "5:30pm",
+      description: "Despedida",
+      icon: <ChurchIcon className="w-fit h-[50px]" />,
+      isUp: false,
+    },
   ];
-  
+
   const MODALS_DATA = {
     yape: {
       name: "Melissa Aracely Santiago Angel - Yape",
@@ -165,18 +187,6 @@ export const MelissaEduardo: React.FC = () => {
       name: "Melissa Aracely Málaga Zuñiga - Ubicación",
       icon: null,
     },
-  };
-
-  const ACCOUNT_DATA = {
-    yapeNumber: "995 066 264",
-    bankAccounts: [
-      { type: "Número BCP", number: "54094210877025" },
-      { type: "Número CCI", number: "00254019421087702538" },
-    ],
-  };
-
-  const LOCATION_DATA = {
-    url: "https://maps.app.goo.gl/---------",
   };
 
   const DRESS_CODE_CONFIG = {
@@ -196,22 +206,6 @@ export const MelissaEduardo: React.FC = () => {
     femaleDressType: "Vestido elegante",
     maleDressType: "Conjunto formal",
     colorGuide: true,
-  };
-
-  const RESTRICTION_CONFIG = {
-    title: "Sólo adultos",
-    description: [
-      "Adoramos a sus pequeños, sin embargo este evento está destinado sólo para adultos.",
-      "¡Esperamos tu comprensión!",
-    ],
-  };
-
-  const RECOMENDATION_MUSIC_CONFIG = {
-    url: "https://docs.google.com/forms/d/e/1FAIpQLSfZrfD7ONob_dXH80yCnKGBAO8jgD4Bzjl3WxfCcrD74_23232386-g/formResponse",
-    fields: {
-      name: "entry.191711223703",
-      message: "entry.652494823232399",
-    },
   };
 
   const RSVP_CONFIRMATION_CONFIG = {
