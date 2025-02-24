@@ -1,8 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import animationData from "../assets/json/loading.json";
-import Lottie from "lottie-react";
+
 import { LoadingPresentationProps } from "../interfaces/LoadingPresentation";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 
 function LoadingPresentation({
   children,

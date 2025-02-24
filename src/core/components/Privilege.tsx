@@ -1,3 +1,4 @@
+"use client";
 import { PrivilegeProps } from "../interfaces/Privilege";
 import { Column } from "./Column";
 

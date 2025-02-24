@@ -1,7 +1,11 @@
+"use client";
 import { useEffect, useRef } from "react";
 import animationData from "../assets/json/musicaSonar.json";
-import Lottie from "lottie-react";
 import { MusicButtonProps } from "../interfaces/MusicButton";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 
 const MusicButton: React.FC<MusicButtonProps> = ({
   musicUrl,

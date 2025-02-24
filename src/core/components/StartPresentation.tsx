@@ -1,3 +1,4 @@
+"use client";
 import { Column } from "./Column";
 import { Countdown } from "./Countdown";
 import { Row } from "./Row";

@@ -1,3 +1,4 @@
+"use client";
 import { forwardRef } from "react";
 
 interface CustomRowProps extends React.HTMLAttributes<HTMLDivElement> {

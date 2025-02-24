@@ -1,3 +1,4 @@
+"use client";
 import { Column } from "./Column";
 
 interface ModalDataProps {

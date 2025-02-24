@@ -1,3 +1,4 @@
+"use client";
 import { ContentPresentationProps } from "../interfaces/ContentPresentation";
 const ContentPresentation: React.FC<ContentPresentationProps> = ({
   isVisiblePresentation,
