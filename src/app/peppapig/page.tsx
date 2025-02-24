@@ -1,12 +1,10 @@
 "use client";
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
 import { useState } from "react";
 import { StartPresentation } from "@/core/components/StartPresentation";
 import "@/core/constants/fonts.css";
 import { MEIcon } from "./presentation/icon/ME";
-const Gallery = dynamic(() => import("@/core/components/Gallery"), {
-  ssr: false,
-});
+import Gallery from "@/core/components/Gallery";
 import { Images } from "@/core/interfaces/Image";
 import { Privilege } from "@/core/components/Privilege";
 import { Celebration } from "@/core/components/EventLocation";
